@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+.containerTab {
+    padding: 20px;
+    color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Closable button inside the container tab */
+.closebtn {
+    float: right;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>Which one of these shows staring <em>Kate McKinnon</em> is your next clue?</h2>
+  <p>Select your answer below:</p>
+</div>
+
+<!-- Three columns -->
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:green;">
+    The Simpsons
+  </div>
+  <div class="column" onclick="openTab('b2');" style="background:blue;">
+    Ghostbusters
+  </div>
+  <div class="column" onclick="openTab('b3');" style="background:red;">
+    Family Guy
+  </div>
+</div>
+
+<!-- Full-width columns: (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:green">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>The Simpsons</h2>
+  <p><img src="https://i.telegraph.co.uk/multimedia/archive/03136/Simpsons-Family_3136665b.jpg" width="300" ></p>
+  <p>Sorry, you are incorrect!</p>
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:blue">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Ghostbusters</h2>
+  <p><img src="http://www.msnbc.com/sites/msnbc/files/styles/ratio--3-2--830x553/public/ghostbusters-dom-df-08024_rv312_rgb.jpg?itok=pWqildCr" width="300"></p>
+  <p>YOU ARE CORRECT!! Hey, good job! Stay tuned for your next set of clues.</p>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:red">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Family Guy</h2>
+  <p><img src="https://cdn1.thr.com/sites/default/files/imagecache/768x433/2018/01/fguy_picnic_v3f.jpg" width="300"></p>
+  <p>Sorry, you are incorrect!</p>
+</div>
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
+
+</body>
+</html> 
+
