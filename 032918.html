@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+.containerTab {
+    padding: 20px;
+    color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Closable button inside the container tab */
+.closebtn {
+    float: right;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>Which one of these random things is your first clue?</h2>
+  <p>Select your answer below:</p>
+</div>
+
+<!-- Three columns -->
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:green;">
+    The Lost Boys
+  </div>
+  <div class="column" onclick="openTab('b2');" style="background:blue;">
+    The Goonies
+  </div>
+  <div class="column" onclick="openTab('b3');" style="background:red;">
+    Beetlejuice
+  </div>
+</div>
+
+<!-- Full-width columns: (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:green">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>The Lost Boys</h2>
+  <p><img src="https://cdn.movieweb.com/img.news.tops/NEGNWPm4KwvJKM_1_b/Lost-Boys-Movie-End-Credits-Scene-Canceled-Script.jpg" width="300" ></p>
+  <p>Sorry, you are incorrect!</p>
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:blue">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>The Goonies</h2>
+  <p><img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNWFhNzFhNjgtZmIxNi00YTI0LTgwMDEtMTQ1MjJlY2UxZjMzXkEyXkFqcGdeQXBrZWVzZXk@._V1_CR0,88,1467,825_AL_UX477_CR0,0,477,268_AL_.jpg" width="300"></p>
+  <p>Sorry, you are incorrect!</p>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:red">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Beetlejuice</h2>
+  <p><img src="http://paradiseofpaonia.com/wp-content/uploads/2017/09/beetlejuice-image-1.jpg" width="300"></p>
+  <p>YOU ARE CORRECT!! Hey, good job! Stay tuned for your next set of clues.</p>
+</div>
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
+
+</body>
+</html> 
+
