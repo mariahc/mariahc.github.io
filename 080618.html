@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial;
+}
+/* The grid: Three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+.containerTab {
+    padding: 20px;
+    color: white;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Closable button inside the container tab */
+.closebtn {
+    float: right;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>So, what the heck are we doing this time?</h2>
+  <p>Try to guess below:</p>
+</div>
+
+<!-- Three columns -->
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:green;">
+    Paint Night
+  </div>
+  <div class="column" onclick="openTab('b2');" style="background:blue;">
+    Concert
+  </div>
+  <div class="column" onclick="openTab('b3');" style="background:red;">
+    Whale Watching
+  </div>
+</div>
+
+<!-- Full-width columns: (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:green">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Paint Night</h2>
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Multicolored_tempera_paints.jpg/1200px-Multicolored_tempera_paints.jpg" width="300" ></p>
+  <p>Sorry, you are incorrect!</p>
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:blue">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Concert</h2>
+  <p><img src="https://static1.squarespace.com/static/589f920415d5dbc3dda9ace2/t/59fb2147692670568435cccf/1509631331330/8x10.jpg" width="300"></p>
+  <p>YES! I hope you like it. We are going to see Weezer and The Pixies at Shoreline Tuesday night!</p>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:red">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Whale Watching</h2>
+  <p><img src="https://cdn.the-scientist.com/assets/articleNo/31945/iImg/4966/1fcc18d4-d0f9-4908-b964-98d37cf5de38-whale.jpg" width="300"></p>
+  <p>Sorry, you are incorrect!</p>
+</div>
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
+
+</body>
+</html> 

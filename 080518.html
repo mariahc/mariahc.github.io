@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial;
+}
+/* The grid: Three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+.containerTab {
+    padding: 20px;
+    color: white;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Closable button inside the container tab */
+.closebtn {
+    float: right;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>Which one of these mythical creatures could be related to your surprise?</h2>
+  <p>Select your answer below:</p>
+</div>
+
+<!-- Three columns -->
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:green;">
+    Mermaid
+  </div>
+  <div class="column" onclick="openTab('b2');" style="background:blue;">
+    Elf
+  </div>
+  <div class="column" onclick="openTab('b3');" style="background:red;">
+    Pixie
+  </div>
+</div>
+
+<!-- Full-width columns: (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:green">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Mermaid</h2>
+  <p><img src="https://amazingstoriesmag.com/wp-content/uploads/2013/05/AstridNielsch_mermaid02.jpg" width="300" ></p>
+  <p>Sorry, you are incorrect!</p>
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:blue">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Elf</h2>
+  <p><img src="https://i.kym-cdn.com/entries/icons/mobile/000/000/820/untitled.jpg" width="300"></p>
+  <p>Sorry, you are incorrect!</p>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:red">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Pixie</h2>
+  <p><img src="https://i.pinimg.com/originals/37/f2/ce/37f2ceec350b0f2d0d21288dd629fb05.jpg" width="300"></p>
+  <p>YES! What could this mean??</p>
+</div>
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
+
+</body>
+</html> 
