@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* The grid: Three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 50px;
+    text-align: center;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+.containerTab {
+    padding: 20px;
+    color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Closable button inside the container tab */
+.closebtn {
+    float: right;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div style="text-align:center">
+  <h2>This is just an example of how to link some stuff</h2>
+  <p>ignore this stuff:</p>
+</div>
+
+<!-- Three columns -->
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:green;">
+    one
+  </div>
+  <div class="column" onclick="openTab('b2');" style="background:blue;">
+    two
+  </div>
+  <div class="column" onclick="openTab('b3');" style="background:red;">
+    three
+  </div>
+</div>
+
+<!-- Full-width columns: (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:green">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Ben Stiller</h2>
+  <p><img src="https://www.famousbirthdays.com/headshots/ben-stiller-7.jpg" width="300" ></p>
+  <p>Sorry, you are incorrect!</p>
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:blue">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Vince Vaughn</h2>
+  <p><img src="https://www.famousbirthdays.com/headshots/vince-vaughn-1.jpg" width="300"></p>
+  <p>Sorry, you are incorrect!</p>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:red">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Will Forte</h2>
+  <p><img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_80%2Cw_300/MTMyOTEzMjI4ODU3NTE0NDYy/will-forte-shutterstock_158749751_1290jpg.jpg" width="300"></p>
+  <p>YOU ARE CORRECT!! Hey, good job! Stay tuned for your next set of clues.</p>
+</div>
+<div style="text-align:center">
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<br><br>
+<p>hey this one has a <a id="anchor2" href="test2.html#anchor">link</a></p>
+<br><br>
+
+<p>this is the FIRST page</p>
+<p>this is the FIRST page</p>
+<p>this is the FIRST page</p>
+<p>this is the FIRST page</p>
+<p>this is the FIRST page</p>
+<p>this is the FIRST page</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+<p>hey this is a lot of text here</p>
+</div>
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
+
+</body>
+</html> 
